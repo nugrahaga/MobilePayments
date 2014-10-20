@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appdefaulttheme_color">#3f51b5</color>
+    <color name="appdefaulttheme_color700">#303F9F</color>
+    <color name="actionbar_text">#fff</color>
+    <color name="actionbar_subtext">#f2f2f2</color>
+    <color name="accent_pink">#FF4081</color>
+    <color name="hint_foreground_dark">#37474f</color>
+    <color name="hint_foreground_light">#cfd8dc</color>
+    <color name="primary_text_dark_disable_only">#455a64</color>
+    <color name="primary_text_light_disable_only">#eceff1</color>
+</resources>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp" >
+
+    <LinearLayout
+        android:id="@+id/postPrint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_shadow"
+        android:orientation="vertical"
+        android:padding="4dp" >
+
+        <TextView
+            android:id="@+id/postPrint_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="STRUK PEMBAYARAN TAGIHAN LISTRIK"
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/postPrint_idPel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="IDPEL : XXXXXXXXXXXX"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/postPrint_namaPel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="NAMA : XXXXXXXXXXXX"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/postPrint_trfDaya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="TARIF / DAYA : XXXX/XXXXXXVA"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/postPrint_bltTh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="BL/TH : MMYY, MMYY,MMYY"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/postPrint_stdMtr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="STAND METER : 9999999-9999999"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/postPrint_rpTagPLN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="RP TAG PLN : Rp. 99.999.999.99"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/postPrint_noRef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="JPA REF : XXXXXXXXXXXX"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/postPrint_midStmnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="PLN menyatakan struk ini sbg bukti"
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/postPrint_midStmnt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="pembayaran yg sah."
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/postPrint_admCA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="ADMIN BANK : Rp. 99.999"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/postPrint_totByr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="TOTAL BAYAR : Rp. 99.999.999.999"
+            android:textColor="#000" />
+        <!--
+        <TextView android:id="@+id/postPrint_sisaTunggakan"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Anda masih memiliki tunggakan ... bulan."/>
+        -->
+
+        <TextView
+            android:id="@+id/postPrint_footer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Rincian tagihan dapat diakses di www.pln.co.id"
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/postPrint_footer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Informasi Hubungi Call Center : 123"
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/postPrint_footer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Atau Hub. PLN Terdekat : no. telp UPJ"
+            android:textColor="#000"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/postPrint_cetak"
+        style="@style/ButtonAppDefaultTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CETAK"
+        android:textColor="#fff" />
+
+</LinearLayout>

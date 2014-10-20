@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobilePayments</string>
+    <string name="title_section0">Home</string>
+    <string name="title_section1">PLN Postpaid</string>
+    <string name="title_section2">PLN Prepaid</string>
+    <string name="title_section3">PLN Non-TagLis</string>
+    <string name="title_section4">History Transaksi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="navmenusection_label">Section</string>
+    
+    <!-- String Value Mobile Payment PLN -->
+    <string name="app_title">MOBILE PAYMENTS</string>
+    
+    <!-- String Value for TextView -->
+    <string name="string_tID">TERMINAL ID : 54JPA123</string>
+    <string name="header_userid">USER ID</string>
+    <string name="registerform_field1"><u>ID Petugas dan Password</u></string>
+    <string name="registerform_field2"><u>Data Payment Point</u></string>
+    <string name="activationform_field1"><u>Registrasi PPOB Lama</u></string>
+    
+    <!-- String Value Splash -->
+    <string name="splashimageDesc">Logo Aplikasi</string>
+    <string name="splashappName">Mobile Payments</string>
+    
+    <!-- String Value Login Form -->
+    <string name="loginusernameLoginTxt">USERNAME</string>
+    <string name="loginpasswordLoginTxt">PASSWORD</string>
+    <string name="loginbtnLogin">LOGIN</string>
+    <string name="loginlink_to_register">REGISTER HERE</string>
+    
+    <!-- String Value Home Fragment -->
+    <string name="homereg_TID">TERMINAL ID : 54JPA123</string>
+    <string name="homecaution"><u>Jika ada keluhan mengenai aplikasi ini harap hubungi nomor telpon berikut : 08112030885 atau silahkan tekan tombol CALL</u></string>
+    <string name="homecall_help">CALL HELP DESK</string>
+    <string name="homelogout">LOGOUT</string>
+    
+    <!-- String Value Postpaid -->
+    <string name="postpaidpost_imeiCode">IMEI CODE : 123456789</string>
+    <string name="postpaidtext">POSTPAID</string>
+    <string name="postpaidtextIDPel">ID PELANGGAN</string>
+    <string name="postpaidtextINQ">INQUIRY</string>
+    
+    <!-- String Value Prepaid -->
+    <string name="prepaidpost_imeiCode">IMEI CODE : 123456789</string>
+    <string name="prepaidtext">PREPAID</string>
+    <string name="prepaidtextNoMeter">NOMOR METER</string>
+    <string name="prepaidtextType">TYPE</string>
+    <string name="prepaidtextNominal">NOMINAL</string>
+    <string name="prepaidtextINQ">INQUIRY</string>
+    <string-array name="unsold">
+        <item>Token Baru</item>
+        <item>Token Unsold</item>
+    </string-array>
+    
+    <!-- Srring Value Non Taglis -->
+    <string name="nontaglispost_imeiCode">IMEI CODE : 123456789</string>
+    <string name="nontaglistext">NON TAGIHAN LISTRIK</string>
+    <string name="nontaglistextIDPel">NO REGISTRASI</string>
+    <string name="nontaglistextINQ">INQUIRY</string>
+    
+    <!-- String Value History -->
+    <string name="historytext">HISTORY</string>
+    <string name="historyNumberHeader">No</string>
+    <string name="historyDateHeader">Date</string>
+    <string name="historyDescriptionHeader">Description</string>
+    <string name="historyRCHeader">RC</string>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:divider">@drawable/my_divider</item>
+        <item name="android:windowTitleStyle">@style/MyOwnDialogTitle</item>
+    </style>
+
+    <style name="MyOwnDialogTitle">
+
+        <!-- <item name="android:drawableRight">@drawable/pln</item> -->
+        <item name="android:divider">@drawable/my_divider</item>
+        <item name="android:dividerHeight">50dp</item>
+        <item name="android:background">@color/appdefaulttheme_color</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+</resources>

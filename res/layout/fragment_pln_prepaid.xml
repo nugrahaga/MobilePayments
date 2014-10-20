@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5" >
+
+        <!-- Header  Starts -->
+        <!-- Header Ends -->
+        <!-- Footer Start -->
+        <!-- Footer Ends -->
+        <!-- Inquiry Form -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/border_shadow"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <!--
+                     <TextView
+                    android:id="@+id/pre_imeiCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="@string/prepaidpost_imeiCode"
+                    android:textColor="#372c24"
+                    android:textStyle="bold" />
+                -->
+
+                <TextView
+                    android:id="@+id/prepaid_TID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="@string/homereg_TID"
+                    android:textColor="#372c24"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Field Data Petugas dan Password -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_shadow"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:text="@string/prepaidtext"
+                    android:textColor="#372c24"
+                    android:textStyle="bold" />
+
+                <!-- ID Petugas Label -->
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:text="@string/prepaidtextNoMeter"
+                    android:textColor="#372c24" />
+
+                <EditText
+                    android:id="@+id/pre_noMeter"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginTop="5dip"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:text="@string/prepaidtextType"
+                    android:textColor="#372c24" />
+
+                <Spinner
+                    android:id="@+id/pre_unsold"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginTop="5dip" />
+
+                <!-- Password Label -->
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:text="@string/prepaidtextNominal"
+                    android:textColor="#372c24" />
+
+                <EditText
+                    android:id="@+id/pre_nominal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginTop="5dip"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Inquiry Button -->
+
+            <Button
+                android:id="@+id/pre_inq"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="@string/prepaidtextINQ"
+                android:textColor="#fff" />
+        </LinearLayout>
+        <!-- Inquiry Form Ends -->
+    </RelativeLayout>
+
+</ScrollView>
