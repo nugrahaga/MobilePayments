@@ -60,7 +60,6 @@ public class PLNPostpaidFragment extends Fragment {
 				.getSession().getUserDetails();
 		postpaid_TID.setText("TERMINAL ID : " + user.get("tID"));
 
-		
 		idPel.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -113,11 +112,12 @@ public class PLNPostpaidFragment extends Fragment {
 				// resultDialog.setContentView(R.layout.dialog_postpaid);
 				// resultDialog.setTitle("DATA TAGIHAN PLN POSTPAID");
 				// resultDialog.show();
-				FragmentTransaction ft = getFragmentManager()
-						.beginTransaction();
-				 DialogFragment dp = DialogPostpaid.newInstance();
-				 dp.show(ft, "");
-//				new inqPostpaid().execute();
+
+				// FragmentTransaction ft = getFragmentManager()
+				// .beginTransaction();
+				// DialogFragment dp = DialogPostpaid.newInstance();
+				// dp.show(ft, "");
+				new inqPostpaid().execute();
 			}
 		});
 
@@ -187,7 +187,15 @@ public class PLNPostpaidFragment extends Fragment {
 						if (response.get("RC").equalsIgnoreCase("00")) {
 							FragmentTransaction ft = getFragmentManager()
 									.beginTransaction();
-							DialogFragment dp = DialogPostpaid.newInstance();
+							DialogFragment dp = DialogPostpaid.newInstance(
+									response.get("IDPEL"),
+									response.get("NAMA"),
+									response.get("TOTAL TAGIHAN"),
+									response.get("TARIF/DAYA"),
+									response.get("BL/TH"),
+									response.get("RP TAG PLN"),
+									response.get("ADMIN BANK"),
+									response.get("TOTAL BAYAR"));
 							dp.show(ft, "");
 						}
 					} catch (Exception e) {

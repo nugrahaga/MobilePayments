@@ -1,8 +1,13 @@
 package com.rnd.mobilepayment.pln;
 
+import java.util.HashMap;
+
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,8 +16,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.rnd.mobilepayment.R;
+import com.rnd.mobilepayment.pln.engine.PLNManager;
+import com.rnd.mobilepayment.utils.MobilePayments;
 
 public class DialogPostpaid extends DialogFragment {
+
+	private ProgressDialog pDialog;
+	private HashMap<String, String> response;
 
 	private String postP_idPel;
 	private String postP_nama;
@@ -34,8 +44,7 @@ public class DialogPostpaid extends DialogFragment {
 	private Button pay;
 
 	/**
-	 * Create a new instance of DialogPostpaid, providing "num" as an
-	 * argument.
+	 * Create a new instance of DialogPostpaid, providing "num" as an argument.
 	 */
 	public static DialogPostpaid newInstance(String postP_idPel,
 			String postP_nama, String postP_totTag, String postP_trfDaya,
@@ -69,16 +78,18 @@ public class DialogPostpaid extends DialogFragment {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog);
-		if (savedInstanceState != null) {
-			postP_idPel = getArguments().getString("IDPEL");
-			postP_nama = getArguments().getString("NAMA");
-			postP_totTag = getArguments().getString("TOTAL TAGIHAN");
-			postP_trfDaya = getArguments().getString("TARIF/DAYA");
-			postP_blTh = getArguments().getString("BL/TH");
-			postP_rpTagPln = getArguments().getString("RP TAG PLN");
-			postP_admBank = getArguments().getString("ADMIN BANK");
-			postP_totByr = getArguments().getString("TOTAL BAYAR");
-		}
+		Log.e("onCreate", "Lalalal");
+		// if (savedInstanceState != null) {
+		postP_idPel = getArguments().getString("IDPEL");
+		postP_nama = getArguments().getString("NAMA");
+		postP_totTag = getArguments().getString("TOTAL TAGIHAN");
+		postP_trfDaya = getArguments().getString("TARIF/DAYA");
+		postP_blTh = getArguments().getString("BL/TH");
+		postP_rpTagPln = getArguments().getString("RP TAG PLN");
+		postP_admBank = getArguments().getString("ADMIN BANK");
+		postP_totByr = getArguments().getString("TOTAL BAYAR");
+		Log.e("onCreate Dialog Tagihan", postP_idPel + " - " + postP_nama);
+		// }
 	}
 
 	@Override
@@ -117,15 +128,88 @@ public class DialogPostpaid extends DialogFragment {
 				// Toast.makeText(getActivity(), "Clicked",
 				// Toast.LENGTH_LONG).show();
 
-				FragmentTransaction ft = getFragmentManager()
-						.beginTransaction();
-//				DialogFragment dp = DialogPostapaidPrint.newInstance();
-				DialogFragment dp = DialogFail.newInstance("Gagal Melakukan Pembayaran");
-				dp.show(ft, "");
-				dismiss();
+				// FragmentTransaction ft = getFragmentManager()
+				// .beginTransaction();
+				// DialogFragment dp = DialogPostapaidPrint.newInstance();
+				// DialogFragment dp =
+				// DialogFail.newInstance("Gagal Melakukan Pembayaran");
+				// dp.show(ft, "");
+				new payPostpaid().execute();
+				// dismiss();
 			}
 		});
 
 		return rootView;
+	}
+
+	protected class payPostpaid extends AsyncTask<String, String, String> {
+
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			pDialog = new ProgressDialog(getActivity());
+			pDialog.setMessage("PAY...");
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(false);
+			pDialog.show();
+		}
+
+		@Override
+		protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			Log.e("payPostpaid", MobilePayments.getIpAddress() + " - "
+					+ MobilePayments.getPortAddress() + " - "
+					+ idPel.getText().toString());
+			response = PLNManager
+					.getInstance()
+					.doRequest()
+					.PAYPostpaid(MobilePayments.getIpAddress(),
+							MobilePayments.getPortAddress(),
+							idPel.getText().toString());
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			pDialog.dismiss();
+			Log.e("Response Pay Postpaid",
+					response.get("RC") + " - " + response.get("RESPONSE_MSG")
+							+ " - " + response.get("IDPEL") + " - "
+							+ response.get("NAMA") + " - "
+							+ response.get("TARIF/DAYA") + " - "
+							+ response.get("BL/TH") + " - "
+							+ response.get("STAND METER") + " - "
+							+ response.get("RP TAG PLN") + " - "
+							+ response.get("JPAREF") + " - "
+							+ response.get("ADMIN BANK") + " - "
+							+ response.get("TOTAL BAYAR"));
+
+			// getActivity().runOnUiThread(new Runnable() {
+			//
+			// @Override
+			// public void run() {
+			// TODO Auto-generated method stub
+			try {
+				if (response.get("RC").equalsIgnoreCase("00")) {
+					dismiss();
+					FragmentTransaction ft = getFragmentManager()
+							.beginTransaction();
+					DialogFragment dp = DialogPostapaidPrint.newInstance(
+							response.get("IDPEL"), response.get("NAMA"),
+							response.get("TARIF/DAYA"), response.get("BL/TH"),
+							response.get("STAND METER"),
+							response.get("RP TAG PLN"), response.get("JPAREF"),
+							response.get("ADMIN BANK"),
+							response.get("TOTAL BAYAR"));
+					dp.show(ft, "");
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e("Error Pay", e.toString());
+			}
+		}
 	}
 }
