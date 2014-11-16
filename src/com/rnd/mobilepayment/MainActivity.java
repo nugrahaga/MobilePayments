@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.rnd.mobilepayment.general.HistoryFragment;
 import com.rnd.mobilepayment.pln.PLNNonTaglisFragment;
 import com.rnd.mobilepayment.pln.PLNPostpaidFragment;
 import com.rnd.mobilepayment.pln.PLNPrepaidFragment;
@@ -52,13 +53,13 @@ public class MainActivity extends ActionBarActivity implements
 		/**
 		 * init
 		 */
-		SessionManager.getInstance().getSession().checkLogin();
-		
-		//Get username
+		// SessionManager.getInstance().getSession().checkLogin();
+
+		// Get username
 		HashMap<String, String> user = SessionManager.getInstance()
 				.getSession().getUserDetails();
 		mSubsTitle = user.get("username");
-		
+
 		IMEI = MobilePayments.getIMEI_ID();
 
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
@@ -102,6 +103,12 @@ public class MainActivity extends ActionBarActivity implements
 			onSectionAttached(4);
 			break;
 
+		case 7:
+			fragmentManager.beginTransaction()
+					.replace(R.id.container, new HistoryFragment()).commit();
+			onSectionAttached(4);
+			break;
+
 		default:
 			// FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager
@@ -126,6 +133,13 @@ public class MainActivity extends ActionBarActivity implements
 		case 4:
 			mTitle = "PLN - NON TAGIHAN";
 			break;
+
+		case 7:
+			mTitle = "HISTORY TRANSAKSI";
+			break;
+		default:
+			mTitle = ""+number;
+			break;
 		}
 	}
 
@@ -134,7 +148,7 @@ public class MainActivity extends ActionBarActivity implements
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 		actionBar.setDisplayShowTitleEnabled(true);
 		actionBar.setTitle(mTitle);
-		//set username
+		// set username
 		actionBar.setSubtitle(mSubsTitle);
 	}
 

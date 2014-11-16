@@ -2,53 +2,53 @@ package com.rnd.mobilepayment.model;
 
 public class History {
 
-	private int no;
-	private String date;
-	private String description;
-	private String RC;
+	private int type;
+	private String name;
+	private int transaction;
+	private String status;
 
 	public History() {
-		// TODO Auto-generated constructor stub
+
 	}
 
-	public History(int no, String date, String description, String RC) {
+	public History(int type, String name, int transaction, String status) {
 		super();
-		this.no = no;
-		this.date = date;
-		this.description = description;
-		this.RC = RC;
+		this.type = type;
+		this.name = name;
+		this.transaction = transaction;
+		this.status = status;
 	}
 
-	public int getNo() {
-		return no;
+	public int getType() {
+		return type;
 	}
 
-	public void setNo(int no) {
-		this.no = no;
+	public void setType(int type) {
+		this.type = type;
 	}
 
-	public String getDate() {
-		return date;
+	public String getName() {
+		return name;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
+	public int getTransaction() {
+		return transaction;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setTransaction(int transaction) {
+		this.transaction = transaction;
 	}
 
-	public String getRC() {
-		return RC;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setRC(String rC) {
-		RC = rC;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }
