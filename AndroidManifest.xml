@@ -11,6 +11,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:name="com.rnd.mobilepayment.utils.MobilePayments"
@@ -42,6 +44,7 @@
             android:name="com.rnd.mobilepayment.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Appdefault.NoTitleBar" />
+        <activity android:name="com.rnd.mobilepayment.general.PrinterSettingFragment" />
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@ package com.rnd.mobilepayment.pln;
 import java.util.HashMap;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -52,6 +54,9 @@ public class PLNPostpaidFragment extends Fragment {
 		postpaid_TID = (TextView) rootView.findViewById(R.id.postpaid_TID);
 		idPel = (EditText) rootView.findViewById(R.id.post_idPelanggan);
 		postInq = (Button) rootView.findViewById(R.id.post_inq);
+
+		final InputMethodManager imm = (InputMethodManager) getActivity()
+				.getSystemService(Context.INPUT_METHOD_SERVICE);
 
 		Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(),
 				"fonts/RobotoCondensed-Bold.ttf");
@@ -117,6 +122,7 @@ public class PLNPostpaidFragment extends Fragment {
 				// .beginTransaction();
 				// DialogFragment dp = DialogPostpaid.newInstance();
 				// dp.show(ft, "");
+				imm.hideSoftInputFromWindow(postInq.getWindowToken(), 0);
 				new inqPostpaid().execute();
 			}
 		});
@@ -142,6 +148,7 @@ public class PLNPostpaidFragment extends Fragment {
 	 * @author nugrahaga
 	 *
 	 */
+	
 	protected class inqPostpaid extends AsyncTask<String, String, String> {
 
 		@Override
@@ -198,6 +205,7 @@ public class PLNPostpaidFragment extends Fragment {
 									response.get("TOTAL BAYAR"));
 							dp.show(ft, "");
 						}
+						// Belum reversal
 					} catch (Exception e) {
 						// TODO: handle exception
 						Log.e("Error Inquiry", e.toString());

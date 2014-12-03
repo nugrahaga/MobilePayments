@@ -1,13 +1,13 @@
 package com.rnd.mobilepayment.utils;
 
-import com.rnd.mobilepayment.pln.engine.PLNManager;
-import com.rnd.mobilepayment.preferences.SessionManager;
-
 import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
+
+import com.rnd.mobilepayment.pln.engine.PLNManager;
+import com.rnd.mobilepayment.preferences.SessionManager;
 
 public class MobilePayments extends Application {
 

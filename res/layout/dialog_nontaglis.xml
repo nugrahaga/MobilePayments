@@ -34,37 +34,6 @@
                 android:orientation="vertical" >
 
                 <!-- ID Petugas Label -->
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="NOMOR METER"
-                    android:textColor="#372c24" />
-
-                <EditText
-                    android:id="@+id/preP_noMeter"
-                    style="@style/EditTextAppDefaultTheme"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:singleLine="true" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ID PELANGGAN"
-                    android:textColor="#372c24" />
-
-                <EditText
-                    android:id="@+id/preP_idPel"
-                    style="@style/EditTextAppDefaultTheme"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:singleLine="true" />
-
-                <!-- ID Petugas Label -->
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -73,7 +42,7 @@
                     android:textColor="#372c24" />
 
                 <EditText
-                    android:id="@+id/preP_nama"
+                    android:id="@+id/nonrek_nama"
                     style="@style/EditTextAppDefaultTheme"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -86,11 +55,11 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="TARIF/DAYA"
+                    android:text="TRANSAKSI"
                     android:textColor="#372c24" />
 
                 <EditText
-                    android:id="@+id/preP_trfDaya"
+                    android:id="@+id/nonrek_transaksi"
                     style="@style/EditTextAppDefaultTheme"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -103,11 +72,11 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="BULAN/TAHUN"
+                    android:text="RP BAYAR"
                     android:textColor="#372c24" />
 
                 <EditText
-                    android:id="@+id/preP_blTh"
+                    android:id="@+id/nonrek_rpBayar"
                     style="@style/EditTextAppDefaultTheme"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -120,11 +89,11 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="JUMLAH TAGIHAN"
+                    android:text="NO REGISTRASI"
                     android:textColor="#372c24" />
 
                 <EditText
-                    android:id="@+id/preP_rpTagPln"
+                    android:id="@+id/nonrek_noRegistrasi"
                     style="@style/EditTextAppDefaultTheme"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -134,6 +103,68 @@
 
                 <!-- ID Petugas Label -->
 
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TGL REGISTRASI"
+                    android:textColor="#372c24" />
+
+                <EditText
+                    android:id="@+id/nonrek_tglRegistrasi"
+                    style="@style/EditTextAppDefaultTheme"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:singleLine="true" />
+
+                <!-- ID Petugas Label -->
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID PELANGGAN"
+                    android:textColor="#372c24" />
+
+                <EditText
+                    android:id="@+id/nonrek_idPel"
+                    style="@style/EditTextAppDefaultTheme"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BIAYA PLN"
+                    android:textColor="#372c24" />
+
+                <EditText
+                    android:id="@+id/nonrek_biayaPLN"
+                    style="@style/EditTextAppDefaultTheme"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:singleLine="true" />
+                
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="JPAREF"
+                    android:textColor="#372c24" />
+
+                <EditText
+                    android:id="@+id/nonrek_noRef"
+                    style="@style/EditTextAppDefaultTheme"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:singleLine="true" />
+                
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -141,14 +172,14 @@
                     android:textColor="#372c24" />
 
                 <EditText
-                    android:id="@+id/preP_admBank"
+                    android:id="@+id/nonrek_admCA"
                     style="@style/EditTextAppDefaultTheme"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:editable="false"
                     android:focusable="false"
                     android:singleLine="true" />
-
+                
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -156,7 +187,7 @@
                     android:textColor="#372c24" />
 
                 <EditText
-                    android:id="@+id/preP_totByr"
+                    android:id="@+id/nonrek_totBayar"
                     style="@style/EditTextAppDefaultTheme"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -168,12 +199,12 @@
             <!-- Register Button -->
 
             <Button
-                android:id="@+id/preP_PAY"
+                android:id="@+id/nonrek_INQ"
                 style="@style/ButtonAppDefaultTheme"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
-                android:text="BELI"
+                android:text="BAYAR"
                 android:textColor="#fff" />
         </LinearLayout>
         <!-- Registration Form Ends -->

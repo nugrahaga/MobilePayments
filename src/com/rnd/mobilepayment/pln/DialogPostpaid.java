@@ -141,6 +141,13 @@ public class DialogPostpaid extends DialogFragment {
 
 		return rootView;
 	}
+	
+	/**
+	 * Async task pay postpaid
+	 * 
+	 * @author nugrahaga
+	 *
+	 */
 
 	protected class payPostpaid extends AsyncTask<String, String, String> {
 
@@ -197,7 +204,7 @@ public class DialogPostpaid extends DialogFragment {
 					dismiss();
 					FragmentTransaction ft = getFragmentManager()
 							.beginTransaction();
-					DialogFragment dp = DialogPostapaidPrint.newInstance(
+					DialogFragment dp = DialogPostpaidPrint.newInstance(
 							response.get("IDPEL"), response.get("NAMA"),
 							response.get("TARIF/DAYA"), response.get("BL/TH"),
 							response.get("STAND METER"),

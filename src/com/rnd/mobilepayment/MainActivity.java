@@ -3,6 +3,7 @@ package com.rnd.mobilepayment;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rnd.mobilepayment.general.HistoryFragment;
+import com.rnd.mobilepayment.general.PrinterSettingFragment;
 import com.rnd.mobilepayment.pln.PLNNonTaglisFragment;
 import com.rnd.mobilepayment.pln.PLNPostpaidFragment;
 import com.rnd.mobilepayment.pln.PLNPrepaidFragment;
@@ -53,7 +55,7 @@ public class MainActivity extends ActionBarActivity implements
 		/**
 		 * init
 		 */
-		// SessionManager.getInstance().getSession().checkLogin();
+		SessionManager.getInstance().getSession().checkLogin();
 
 		// Get username
 		HashMap<String, String> user = SessionManager.getInstance()
@@ -106,7 +108,7 @@ public class MainActivity extends ActionBarActivity implements
 		case 7:
 			fragmentManager.beginTransaction()
 					.replace(R.id.container, new HistoryFragment()).commit();
-			onSectionAttached(4);
+			onSectionAttached(7);
 			break;
 
 		default:
@@ -138,7 +140,7 @@ public class MainActivity extends ActionBarActivity implements
 			mTitle = "HISTORY TRANSAKSI";
 			break;
 		default:
-			mTitle = ""+number;
+			mTitle = "" + number;
 			break;
 		}
 	}
@@ -173,6 +175,8 @@ public class MainActivity extends ActionBarActivity implements
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+//			Intent myIntent = new Intent(MainActivity.this,PrinterSettingFragment.class);
+//			startActivity(myIntent);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

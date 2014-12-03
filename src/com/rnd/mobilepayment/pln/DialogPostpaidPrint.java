@@ -7,10 +7,13 @@ import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class DialogPostapaidPrint extends DialogFragment {
+public class DialogPostpaidPrint extends DialogFragment {
 
 	private TextView postPrint_idPel;
 	private TextView postPrint_namaPel;
@@ -21,6 +24,7 @@ public class DialogPostapaidPrint extends DialogFragment {
 	private TextView postPrint_noRef;
 	private TextView postPrint_admCA;
 	private TextView postPrint_totByr;
+	private Button postPrint_cetak;
 
 	private String idPel;
 	private String namaPel;
@@ -36,10 +40,10 @@ public class DialogPostapaidPrint extends DialogFragment {
 	 * Create a new instance of DialogPostapaidPrint.
 	 */
 
-	public static DialogPostapaidPrint newInstance(String idPel,
+	public static DialogPostpaidPrint newInstance(String idPel,
 			String namaPel, String trfDaya, String bltTh, String stdMtr,
 			String rpTagPLN, String noRef, String admCA, String totByr) {
-		DialogPostapaidPrint dp = new DialogPostapaidPrint();
+		DialogPostpaidPrint dp = new DialogPostpaidPrint();
 
 		Bundle args = new Bundle();
 		args.putString("IDPEL", idPel);
@@ -56,8 +60,8 @@ public class DialogPostapaidPrint extends DialogFragment {
 		return dp;
 	}
 
-	public static DialogPostapaidPrint newInstance() {
-		DialogPostapaidPrint dp = new DialogPostapaidPrint();
+	public static DialogPostpaidPrint newInstance() {
+		DialogPostpaidPrint dp = new DialogPostpaidPrint();
 
 		return dp;
 	}
@@ -104,6 +108,8 @@ public class DialogPostapaidPrint extends DialogFragment {
 				.findViewById(R.id.postPrint_admCA);
 		postPrint_totByr = (TextView) rootView
 				.findViewById(R.id.postPrint_totByr);
+		postPrint_cetak = (Button) rootView
+				.findViewById(R.id.postPrint_cetak);
 		
 		postPrint_idPel.setText(idPel);
 		postPrint_namaPel.setText(namaPel);
@@ -114,6 +120,14 @@ public class DialogPostapaidPrint extends DialogFragment {
 		postPrint_noRef.setText(noRef);
 		postPrint_admCA.setText("Rp. "+admCA);
 		postPrint_totByr.setText("Rp. "+totByr);
+		postPrint_cetak.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_LONG).show();
+			}
+		});
 
 		return rootView;
 	}
