@@ -44,6 +44,7 @@
             android:name="com.rnd.mobilepayment.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Appdefault.NoTitleBar" />
+        <activity android:name="com.rnd.mobilepayment.printer.PrintActivity" />
         <activity android:name="com.rnd.mobilepayment.general.PrinterSettingFragment" />
     </application>
 

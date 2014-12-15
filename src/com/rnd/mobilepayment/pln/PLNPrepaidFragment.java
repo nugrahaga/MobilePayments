@@ -279,6 +279,7 @@ public class PLNPrepaidFragment extends Fragment {
 									.beginTransaction();
 							
 							Log.e("Response", responsePAY.toString());
+							Log.e("Footer MSG", response.get("FOOTER MSG"));
 							
 							DialogPrepaidPrint.newInstance(
 									responsePAY.get("NO METER"),

@@ -1,7 +1,10 @@
 package com.rnd.mobilepayment.pln;
 
 import com.rnd.mobilepayment.R;
+import com.rnd.mobilepayment.printer.PrintActivity;
+import com.rnd.mobilepayment.printer.PrinterUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -15,6 +18,7 @@ import android.widget.Toast;
 
 public class DialogPostpaidPrint extends DialogFragment {
 
+	private TextView postPrint_header;
 	private TextView postPrint_idPel;
 	private TextView postPrint_namaPel;
 	private TextView postPrint_trfDaya;
@@ -25,6 +29,13 @@ public class DialogPostpaidPrint extends DialogFragment {
 	private TextView postPrint_admCA;
 	private TextView postPrint_totByr;
 	private Button postPrint_cetak;
+
+	private TextView postPrint_midStmnt;
+	private TextView postPrint_midStmnt2;
+	private TextView postPrint_footer1;
+	private TextView postPrint_footer15;
+	private TextView postPrint_footer2;
+	private TextView postPrint_footer3;
 
 	private String idPel;
 	private String namaPel;
@@ -40,9 +51,9 @@ public class DialogPostpaidPrint extends DialogFragment {
 	 * Create a new instance of DialogPostapaidPrint.
 	 */
 
-	public static DialogPostpaidPrint newInstance(String idPel,
-			String namaPel, String trfDaya, String bltTh, String stdMtr,
-			String rpTagPLN, String noRef, String admCA, String totByr) {
+	public static DialogPostpaidPrint newInstance(String idPel, String namaPel,
+			String trfDaya, String bltTh, String stdMtr, String rpTagPLN,
+			String noRef, String admCA, String totByr) {
 		DialogPostpaidPrint dp = new DialogPostpaidPrint();
 
 		Bundle args = new Bundle();
@@ -80,7 +91,7 @@ public class DialogPostpaidPrint extends DialogFragment {
 		noRef = getArguments().getString("JPA REF");
 		admCA = getArguments().getString("ADMIN BANK");
 		totByr = getArguments().getString("TOTAL BAYAR");
-		Log.e("onCreate Dialog Print", idPel + " - " + namaPel);
+		Log.e("onCreate Dialog Print", idPel + " - " + namaPel + " - ");
 	}
 
 	@Override
@@ -90,6 +101,8 @@ public class DialogPostpaidPrint extends DialogFragment {
 		View rootView = inflater.inflate(R.layout.dialog_postpaid_print,
 				container, false);
 
+		postPrint_header = (TextView) rootView
+				.findViewById(R.id.postPrint_header);
 		postPrint_idPel = (TextView) rootView
 				.findViewById(R.id.postPrint_idPel);
 		postPrint_namaPel = (TextView) rootView
@@ -108,24 +121,103 @@ public class DialogPostpaidPrint extends DialogFragment {
 				.findViewById(R.id.postPrint_admCA);
 		postPrint_totByr = (TextView) rootView
 				.findViewById(R.id.postPrint_totByr);
-		postPrint_cetak = (Button) rootView
-				.findViewById(R.id.postPrint_cetak);
-		
-		postPrint_idPel.setText(idPel);
-		postPrint_namaPel.setText(namaPel);
-		postPrint_trfDaya.setText(trfDaya+ " VA");
-		postPrint_bltTh.setText(bltTh);
-		postPrint_stdMtr.setText(stdMtr);
-		postPrint_rpTagPLN.setText("Rp. "+rpTagPLN);
-		postPrint_noRef.setText(noRef);
-		postPrint_admCA.setText("Rp. "+admCA);
-		postPrint_totByr.setText("Rp. "+totByr);
+
+		postPrint_midStmnt = (TextView) rootView
+				.findViewById(R.id.postPrint_midStmnt);
+		postPrint_midStmnt2 = (TextView) rootView
+				.findViewById(R.id.postPrint_midStmnt2);
+		postPrint_footer1 = (TextView) rootView
+				.findViewById(R.id.postPrint_footer1);
+		postPrint_footer15 = (TextView) rootView
+				.findViewById(R.id.postPrint_footer15);
+		postPrint_footer2 = (TextView) rootView
+				.findViewById(R.id.postPrint_footer2);
+		postPrint_footer3 = (TextView) rootView
+				.findViewById(R.id.postPrint_footer3);
+
+		postPrint_cetak = (Button) rootView.findViewById(R.id.postPrint_cetak);
+
+		postPrint_idPel.setText("IDPEL : " + idPel);
+		postPrint_namaPel.setText("NAMA : " + namaPel);
+		postPrint_trfDaya.setText("TARIF / DAYA : " + trfDaya + " VA");
+		postPrint_bltTh.setText("BL/TH : " + bltTh);
+		postPrint_stdMtr.setText("STAND METER : " + stdMtr);
+		postPrint_rpTagPLN.setText("RP TAG PLN : Rp. " + rpTagPLN);
+		postPrint_noRef.setText("JPA REF : " + noRef);
+		postPrint_admCA.setText("ADMIN BANK : Rp. " + admCA);
+		postPrint_totByr.setText("TOTAL BAYAR : Rp. " + totByr);
 		postPrint_cetak.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_LONG).show();
+				Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_LONG)
+						.show();
+				Intent myIntent = new Intent(getActivity(), PrintActivity.class);
+				String strToPrint = PrinterUtil.smallFont()
+						+ PrinterUtil.centerAlign() + PrinterUtil.bold()
+						+ postPrint_header.getText().toString() + "\r\n\r\n"
+						
+						// Data 1
+						+ PrinterUtil.smallFont()
+						+ PrinterUtil.leftAlign() + PrinterUtil.cancelBold()
+						+ postPrint_idPel.getText().toString() + "\r\n"
+						+ postPrint_namaPel.getText().toString() + "\r\n"
+						+ postPrint_trfDaya.getText().toString() + "\r\n"
+						+ postPrint_bltTh.getText().toString() + "\r\n"
+						+ postPrint_stdMtr.getText().toString() + "\r\n"
+						+ postPrint_rpTagPLN.getText().toString() + "\r\n"
+						+ postPrint_noRef.getText().toString() + "\r\n\r\n"
+						
+						// Mid Statement
+						+ PrinterUtil.smallFont()
+						+ PrinterUtil.centerAlign() + PrinterUtil.bold()
+						+ postPrint_midStmnt.getText().toString() + "\r\n"
+						+ postPrint_midStmnt2.getText().toString() + "\r\n\r\n"
+						
+						// Data 2
+						+ PrinterUtil.smallFont()
+						+ PrinterUtil.leftAlign() + PrinterUtil.cancelBold()
+						+ postPrint_admCA.getText().toString() + "\r\n"
+						+ postPrint_totByr.getText().toString() + "\r\n\r\n"
+						
+						// Footer Msg
+						+ PrinterUtil.smallFont()
+						+ PrinterUtil.centerAlign() + PrinterUtil.bold()
+						+ postPrint_footer1.getText().toString() + "\r\n"
+						+ postPrint_footer15.getText().toString() + "\r\n"
+						+ postPrint_footer2.getText().toString() + "\r\n"
+						+ postPrint_footer3.getText().toString() + "\r\n";
+				myIntent.putExtra("TEXT", strToPrint);
+//						PrinterUtil.smallFont() + PrinterUtil.centerAlign()
+//								+ PrinterUtil.bold()
+//								+ postPrint_header.getText().toString()
+//								+ "\r\n" + postPrint_idPel.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_namaPel.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_trfDaya.getText().toString()
+//								+ "\r\n" + postPrint_bltTh.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_stdMtr.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_rpTagPLN.getText().toString()
+//								+ "\r\n" + postPrint_noRef.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_midStmnt.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_midStmnt2.getText().toString()
+//								+ "\r\n" + postPrint_admCA.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_totByr.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_footer1.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_footer2.getText().toString()
+//								+ "\r\n"
+//								+ postPrint_footer3.getText().toString()
+//								+ "\r\n");
+				startActivity(myIntent);
 			}
 		});
 

@@ -141,7 +141,7 @@ public class DialogPostpaid extends DialogFragment {
 
 		return rootView;
 	}
-	
+
 	/**
 	 * Async task pay postpaid
 	 * 
@@ -192,7 +192,8 @@ public class DialogPostpaid extends DialogFragment {
 							+ response.get("RP TAG PLN") + " - "
 							+ response.get("JPAREF") + " - "
 							+ response.get("ADMIN BANK") + " - "
-							+ response.get("TOTAL BAYAR"));
+							+ response.get("TOTAL BAYAR") + " - "
+							+ response.get("FOOTER MSG"));
 
 			// getActivity().runOnUiThread(new Runnable() {
 			//

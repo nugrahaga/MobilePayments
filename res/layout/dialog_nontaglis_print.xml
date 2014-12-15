@@ -9,7 +9,7 @@
     android:paddingTop="8dp" >
 
     <LinearLayout
-        android:id="@+id/postPrint"
+        android:id="@+id/nonTagLisPrint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border_shadow"
@@ -17,11 +17,12 @@
         android:padding="4dp" >
 
         <TextView
-            android:id="@+id/postPrint_header"
+            android:id="@+id/nonTagLisPrint_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="STRUK PEMBAYARAN TAGIHAN LISTRIK"
+            android:gravity="center"
+            android:text="STRUK PEMBAYARAN NON TAGIHAN LISTRIK"
             android:textColor="#000"
             android:textStyle="bold" />
 
@@ -32,15 +33,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/postPrint_idPel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text="IDPEL : XXXXXXXXXXXX"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/postPrint_namaPel"
+            android:id="@+id/nonTagLisPrint_namaPel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -48,39 +41,47 @@
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/postPrint_trfDaya"
+            android:id="@+id/nonTagLisPrint_transaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="TARIF / DAYA : XXXX/XXXXXXVA"
+            android:text="TRANSAKSI : XXXXXXXXXXXX"
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/postPrint_bltTh"
+            android:id="@+id/nonTagLisPrint_noReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="BL/TH : MMYY, MMYY,MMYY"
+            android:text="NO REGISTRASI : XXXXXXXXXXXX"
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/postPrint_stdMtr"
+            android:id="@+id/nonTagLisPrint_tglReg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="STAND METER : 9999999-9999999"
+            android:text="TANGGAL REGISTRASI : MM DD, YY"
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/postPrint_rpTagPLN"
+            android:id="@+id/nonTagLisPrint_idPel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text="RP TAG PLN : Rp. 99.999.999.99"
+            android:text="ID PELANGGAN : XXXXXXXXXXXX"
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/postPrint_noRef"
+            android:id="@+id/nonTagLisPrint_biayaPLN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="BIAYA PLN : Rp. 99.999"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/nonTagLisPrint_noRef"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -93,7 +94,7 @@
             android:layout_gravity="center" />
 
         <TextView
-            android:id="@+id/postPrint_midStmnt"
+            android:id="@+id/nonTagLisPrint_midStmnt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -102,7 +103,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/postPrint_midStmnt2"
+            android:id="@+id/nonTagLisPrint_midStmnt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -116,7 +117,7 @@
             android:layout_gravity="center" />
 
         <TextView
-            android:id="@+id/postPrint_admCA"
+            android:id="@+id/nonTagLisPrint_admCA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -124,14 +125,14 @@
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/postPrint_totByr"
+            android:id="@+id/nonTagLisPrint_totByr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="TOTAL BAYAR : Rp. 99.999.999.999"
             android:textColor="#000" />
         <!--
-        <TextView android:id="@+id/postPrint_sisaTunggakan"
+        <TextView android:id="@+id/nonTagLisPrint_sisaTunggakan"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
@@ -140,27 +141,16 @@
         -->
 
         <TextView
-            android:id="@+id/postPrint_footer1"
+            android:id="@+id/nonTagLisPrint_footer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_gravity="center"
-            android:text="Rincian tagihan dapat diakses di"
-            android:textColor="#000"
-            android:textStyle="bold" />
-        
-        <TextView
-            android:id="@+id/postPrint_footer15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="www.pln.co.id"
+            android:text="Rincian tagihan dapat diakses di www.pln.co.id"
             android:textColor="#000"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/postPrint_footer2"
+            android:id="@+id/nonTagLisPrint_footer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -169,7 +159,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/postPrint_footer3"
+            android:id="@+id/nonTagLisPrint_footer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -179,7 +169,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/postPrint_cetak"
+        android:id="@+id/nonTagLisPrint_cetak"
         style="@style/ButtonAppDefaultTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -187,10 +187,22 @@ public class PLNNonTaglisFragment extends Fragment {
 						if (response.get("RC").equalsIgnoreCase("00")) {
 							FragmentTransaction ft = getFragmentManager()
 									.beginTransaction();
+
+							DialogNonTagLis.newInstance(response.get("NAMA"),
+									response.get("TRANSAKSI"),
+									response.get("RP BAYAR"),
+									response.get("NO REGISTRASI"),
+									response.get("TGL REGISTRASI"),
+									response.get("IDPEL"),
+									response.get("BIAYA PLN"),
+									response.get("JPAREF"),
+									response.get("ADMIN BANK"),
+									response.get("TOTAL BAYAR")).show(ft, "");
 						}
 						// Belum Reversal
 					} catch (Exception e) {
 						// TODO: handle exception
+						Log.e("Error Inquiry", e.toString());
 					}
 				}
 			});
