@@ -1,9 +1,5 @@
 package com.rnd.mobilepayment.pln;
 
-import com.rnd.mobilepayment.R;
-import com.rnd.mobilepayment.printer.PrintActivity;
-import com.rnd.mobilepayment.printer.PrinterUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -15,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.rnd.mobilepayment.R;
+import com.rnd.mobilepayment.printer.PrinterActivity;
+import com.rnd.mobilepayment.printer.PrinterUtil;
 
 public class DialogPostpaidPrint extends DialogFragment {
 
@@ -153,7 +153,7 @@ public class DialogPostpaidPrint extends DialogFragment {
 				// TODO Auto-generated method stub
 				Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_LONG)
 						.show();
-				Intent myIntent = new Intent(getActivity(), PrintActivity.class);
+				Intent myIntent = new Intent(getActivity(), PrinterActivity.class);
 				String strToPrint = PrinterUtil.smallFont()
 						+ PrinterUtil.centerAlign() + PrinterUtil.bold()
 						+ postPrint_header.getText().toString() + "\r\n\r\n"

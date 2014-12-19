@@ -96,7 +96,7 @@ public class PrinterModule {
 		dialog.setTitle("Silahkan pilih perangkat printer bluetooth");
 		dialog.setCancelable(false);
 
-		mProgressBar = (ProgressBar) dialog.findViewById(R.id.progress);
+		mProgressBar = (ProgressBar) dialog.findViewById(R.id.bt_scanProgress);
 
 		scan = (Button) dialog.findViewById(R.id.btnScan);
 		scan.setOnClickListener(new View.OnClickListener() {

@@ -3,7 +3,6 @@ package com.rnd.mobilepayment;
 import java.util.HashMap;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rnd.mobilepayment.general.HistoryFragment;
-import com.rnd.mobilepayment.general.PrinterSettingFragment;
 import com.rnd.mobilepayment.pln.PLNNonTaglisFragment;
 import com.rnd.mobilepayment.pln.PLNPostpaidFragment;
 import com.rnd.mobilepayment.pln.PLNPrepaidFragment;
